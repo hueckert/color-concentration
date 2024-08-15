@@ -2,3 +2,34 @@ body {
 	background: #e7d2d2;
 	margin: 0;
 }
+
+h1 {
+    color: #2b0dee;
+    margin: 20px 0;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ ol {
+    color: #021211;
+    text-align: center;
+    list-style-position: inside;
+ }
+
+.tiles {
+	margin: 50px auto;
+	width: max-content;
+	display: grid;
+	grid-template-columns: repeat(4, 125px);
+	gap: 16px;
+	box-sizing: border-box;
+}
+
+.tile {
+	height: 125px;
+	background: #111111;
+	border: 5px solid #444444;
+	cursor: pointer;
+}
