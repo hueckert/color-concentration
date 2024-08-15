@@ -18,8 +18,16 @@
 //7) State a win when all color tiles have been matched and reamin turned over. 
 
 /*-------------------------------- Constants --------------------------------*/
+const tilesContainer = document.querySelector(".tiles"); // refer to tiles container div to use JS to create tile and grid, deleted titles in html
+const colors = ["red", "orange", "yellow", "blue", "green", "violet", "indigo", "white"]; // set up colors to use for titles each color will be used twice
+const colorsList = [...colors, ...colors]; // array for colors to be shown
+const tileCount = colorsList.length; // gives the amount of tiles that will be used
+
+// console.log(colorsList) test to make sure colors are being used 
 
 /*-------------------------------- Variables --------------------------------*/
+
+
 
 /*------------------------ Cached Element References ------------------------*/
 
