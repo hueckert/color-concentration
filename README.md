@@ -49,13 +49,13 @@ I like rainbows and wanted to make the game a rainbow themed matching game. Fell
 
 ### NEXT STEPS: 
 
-Due to some medical issues I would have liked to have spent more time refining my game and program.
+Due to some medical issues I would have liked to have spent more time refining my game and code. 
 
 ### Special Acknowledgment: 
 
 My Wife for helping me type while my arm is in a sling after surgery.
 
-Bin Zhu - A Software Dev that works at the same compnay as I do (USAA). We also went to high school together. 
+Bin Zhu - A Software Dev that works at the same company as I do (USAA). We also went to high school together. He helped me set up my tiles and tile containers in JS as opposed to HTML. 
 
 
 
