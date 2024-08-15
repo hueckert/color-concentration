@@ -19,17 +19,36 @@
 
 /*-------------------------------- Constants --------------------------------*/
 const tilesContainer = document.querySelector(".tiles"); // refer to tiles container div to use JS to create tile and grid, deleted titles in html
+
 const colors = ["red", "orange", "yellow", "blue", "green", "violet", "indigo", "white"]; // set up colors to use for titles each color will be used twice
+
 const colorsList = [...colors, ...colors]; // array for colors to be shown
+
 const tileCount = colorsList.length; // gives the amount of tiles that will be used
+
 
 // console.log(colorsList) test to make sure colors are being used 
 
 /*-------------------------------- Variables --------------------------------*/
 
-
+let shownCount = 0;  // will give us how many tiles are turned over
+let currentTile = null;  // tile that has just been clicked
+let lastTurn = false;  // will allow to unmatched tiles to turn back over
 
 /*------------------------ Cached Element References ------------------------*/
+
+
+
+//* build titles 
+
+for (let i = 0; i < tileCount; i++) { // loop to pick colors
+	const randomIdx = Math.floor(Math.random() * colorsList.length); // picks a random index inside the  color array between 0-15
+	const color = colorsList[randomIdx]; // get the color from that index
+	const tile = buildTile(color); // adding color to the titles
+
+	colorsList.splice(randomIdx, 1);  // give us a max of two per color
+	tilesContainer.appendChild(tile);
+}
 
 /*----------------------------- Event Listeners -----------------------------*/
 
