@@ -38,27 +38,54 @@ let lastTurn = false;  // will allow to unmatched tiles to turn back over
 /*------------------------ Cached Element References ------------------------*/
 
 function buildTile(color) {
-	const element = document.createElement("div");  // building tiles
+	const element = document.createElement("div");   // building tiles
 
-	element.classList.add("tile");  // allows to access class title on html page
+    element.classList.add("tile"); // allows to access class title on html page
+
 	element.setAttribute("data-color", color); // record info of title
 
-    element.addEventListener("click", () => {  // allows to click on tile
-		if (lastTurn) {
-            return;
-        }
-    }) 
+	element.setAttribute("data-revealed", "false"); // not allow other tiles to be clicked
 
-    element.style.backgroundCkolor = color; // add color to tile
+	element.addEventListener("click", () => {   // allows to click on tile
 
-    if (!currentTile) {
-        currentTile = element; //assin active tile
+		const revealed = element.getAttribute("data-revealed");
 
-        return;
-        //console.log(currentTile);
-    }
+		if (
+			lastTurn
+			|| revealed === "true"
+			|| element == currentTile
+		) {
+			return;
+		}
 
-    lastTurn = true;
+		// Reveal this color
+		element.style.backgroundColor = color;  // add color to tile
+
+
+		if (!currentTile) {
+			currentTile = element;
+
+			return;
+		}
+
+		const colorToMatch = currentTile.getAttribute("data-color"); //  function for getting tile colors to match
+
+		if (colorToMatch === color) {
+			element.setAttribute("data-revealed", "true");
+			currentTile.setAttribute("data-revealed", "true");
+
+			currentTile = null;
+			lastTurn = false;
+			shownCount += 2;
+
+			if (shownCount === tileCount) {  // all tiles are turned over
+				alert("You win! Refresh to start again.");  // player wins
+			}
+
+			return;
+		}
+
+		lastTurn = true;
 
 		setTimeout(() => {
 			currentTile.style.backgroundColor = null;
@@ -67,9 +94,10 @@ function buildTile(color) {
 			lastTurn = false;
 			currentTile = null;
 		}, 2000);  // since 2 tiles are turned over and they dont match they will be turned back over
+	});
 
 	return element; // call the element funtion
-	
+
 }
    
 
