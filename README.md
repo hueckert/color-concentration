@@ -2,6 +2,10 @@
 
 # Game Introdution - COLOR CONCENTRATION
 ![low-fi](image.png)
+## Play game below: 
+[COLOR-CONCENTRATION](https://hueckert.github.io/color-concentration/)
+
+
 ### Game Inspiration:
 I like rainbows and wanted to make the game a rainbow themed matching game. Fell a little short on the rainbow but was able to incorporate all the rainbow colors for my tiles to be matched. 
 
