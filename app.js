@@ -37,7 +37,17 @@ let lastTurn = false;  // will allow to unmatched tiles to turn back over
 
 /*------------------------ Cached Element References ------------------------*/
 
+function buildTile(color) {
+	const element = document.createElement("div");  // building tiles
 
+	element.classList.add("tile");  // allows to access class title on html page
+	element.setAttribute("data-color", color); // record info of title
+
+
+	return element; // call the element funtion
+	
+}
+   
 
 //* build titles 
 
@@ -47,9 +57,6 @@ for (let i = 0; i < tileCount; i++) { // loop to pick colors
 	const tile = buildTile(color); // adding color to the titles
 
 	colorsList.splice(randomIdx, 1);  // give us a max of two per color
-	tilesContainer.appendChild(tile);
+	tilesContainer.appendChild(tile);  // add the title built to the tile container
 }
-
-/*----------------------------- Event Listeners -----------------------------*/
-
-/*-------------------------------- Functions --------------------------------*/
+//  
