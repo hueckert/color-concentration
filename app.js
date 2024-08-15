@@ -43,6 +43,30 @@ function buildTile(color) {
 	element.classList.add("tile");  // allows to access class title on html page
 	element.setAttribute("data-color", color); // record info of title
 
+    element.addEventListener("click", () => {  // allows to click on tile
+		if (lastTurn) {
+            return;
+        }
+    }) 
+
+    element.style.backgroundCkolor = color; // add color to tile
+
+    if (!currentTile) {
+        currentTile = element; //assin active tile
+
+        return;
+        //console.log(currentTile);
+    }
+
+    lastTurn = true;
+
+		setTimeout(() => {
+			currentTile.style.backgroundColor = null;
+			element.style.backgroundColor = null;
+
+			lastTurn = false;
+			currentTile = null;
+		}, 2000);  // since 2 tiles are turned over and they dont match they will be turned back over
 
 	return element; // call the element funtion
 	
